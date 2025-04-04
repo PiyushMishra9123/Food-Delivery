@@ -1,0 +1,610 @@
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="style.css">
+     <div class="container-fluid top-header">   
+      <nav class="navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-4">
+               <!DOCTYPE html>
+               <head>
+                 <a class="navbar-brand" href="#">
+                  <img src="logo/logo.png">
+                 </a>
+            </div>
+              <div class="col-lg-6 col-md-6 col-2">
+                <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" id="category-link">Category</a>
+                      <ul class="dropdown-menu" id="category-dropdown">
+                        <li><a class="dropdown-item" href="#">Veg</a></li>
+                        <li><a class="dropdown-item" href="#">Non-Veg</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" id="menu-link">Menu List</a>
+                      <ul class="dropdown-menu" id="menu-list">
+                        <li><a class="dropdown-item" href="#">Chicken Salad </a></li>
+                        <li><a class="dropdown-item" href="#">Bacon Cheese Burger</a></li>
+                        <li><a class="dropdown-item" href="#">Bacon Cheese Pizza</a></li>
+                        <li><a class="dropdown-item" href="#">chicken pizza</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" id="contact-us-link">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" id="track-order-link">Track Your Order</a>
+                    </li>
+                    <li class="nav-item">
+                          <a class="nav-link" href="#" id="review-link">Rate & Review</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" id="login-link">Login</a>
+                    </li>
+                  </ul>
+                    <div id="contact-modal" class="modal">
+                      <div class="modal-content">
+                        <span class="close-btn" id="close-modal-btn">&times;</span>
+                        <h2>Contact Information</h2>
+                        <p><strong>Phone:</strong> +91-9123354925</p>
+                        <p><strong>Email:</strong> pmishra70039@gmail.com</p>
+                      </div>
+                    </div>
+                    <div id="track-order-modal" class="modal">
+                      <div class="modal-content">
+                        <span class="close-btn" id="close-track-modal-btn">&times;</span>
+                        <h2>Track Your Order</h2>
+                        <p>Please enter your order ID to track the status of your order.</p>
+                        <input type="text" id="order-id" placeholder="Enter Order ID" />
+                        <button id="track-order-btn">Track Order</button>
+                        <div id="order-status"></div>
+                      </div>
+                    </div>
+                    <div id="review-modal" class="modal">
+                      <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Rate and Review</h2>
+                        <div id="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                         <span class="star" data-value="3">&#9733;</span>
+                          <span class="star" data-value="4">&#9733;</span>
+                             <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                         <div id="review-modal" class="modal">
+                              <div class="modal-content">
+                                 <span class="close">&times;</span>
+                                        <h2>Write a Review</h2>
+                                            <div id="star-rating">
+                                            </div>
+                                       <textarea id="review-text" placeholder="Write your review here"></textarea>
+                                      <button id="submit-review">Submit Review</button>
+                                 </div>
+                                  </div>
+                                   <textarea id="review-text" placeholder="Write your review here"></textarea>
+                                   <button id="submit-review">Submit</button>
+                                  </div>
+                               </div>
+                               <div class="modal" id="login-modal">
+                                  <div class="modal-content">
+                                     <span class="close-btn" id="close-btn">&times;</span>
+                                        <h2>Login</h2>
+                                          <form id="login-form">
+                                          <input type="email" id="email" placeholder="Enter your email" required />
+                                          <br/>
+                                          <input type="password" id="password" placeholder="Enter your password" required />
+                                          <br/>
+                                          <button type="submit">Login</button>
+                                          </form>
+                                          <p>Don't have an account? <a href="#" id="create-account-link">Create a new account</a></p>
+                                   </div>
+                               </div>
+                                <div class="modal" id="signup-modal">
+                                 <div class="modal-content">
+                                  <span class="close-btn" id="close-signup-btn">&times;</span>
+                                  <h2>Create New Account</h2>
+                                  <form id="signup-form">
+                                   <input type="text" id="new-username" placeholder="Enter your username" required />
+                                   <input type="email" id="new-email" placeholder="Enter your email" required />
+                                   <input type="password" id="new-password" placeholder="Enter your password" required />
+                                   <button type="submit">Sign Up</button>
+                                  </form>
+                                </div>
+                             </div>
+              </ul>
+              </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-6 social-media">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <a href="#">
+                  <div class="search-container">
+                    <i class="fa fa-search" id="search-icon"></i>
+                    <input type="text" id="search-box" placeholder="Search..." />
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="container-fluid">
+        <div class="banner-section">
+          <div class="row">          
+            <div class="col-lg-5 col-md-7 col-12">
+              <div class="banner-detail">
+                <h5>Best Choice</h5>
+                <h1>ITALIAN PIZZA</h1>
+                
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-5 col-12">
+              <div class="banner-img">
+                <img src="logo/banner.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+<div class="container-fluid  main-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="top-banner">
+            <div class="row">
+              <div class="col-md-7">
+                <h2>SAVE 30%</h2>
+                <h3>HamBurger"S Combo</h3>
+                   </div>
+              <div class="col-md-5">
+                <div>
+                  <img src="logo/banner-1.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="top-banner">
+            <div class="row">
+              <div class="col-md-7">
+                <h2>SAVE 30%</h2>
+                <h3>Burg"S Combo</h3>
+                 </div>
+              <div class="col-md-5">
+                <div>
+                  <img src="logo/banner-2.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="top-banner">
+            <div class="row">
+              <div class="col-md-7">
+                <h2>SAVE 30%</h2>
+                <h3>Burger And French fries combo</h3>
+                    </div>
+              <div class="col-md-5">
+                <div>
+                  <img src="logo/banner-3.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="top-banner">
+            <div class="row">
+              <div class="col-lg-7">
+                <h2>SAVE 30%</h2>
+                <h3>Burger And Cold Drink Comboo!</h3>
+                     </div>
+              <div class="col-lg-5">
+                <div>
+                  <img src="logo/banner-4.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="top-banner">
+            <div class="row">
+              <div class="col-lg-7">
+                <h2>SAVE 30%</h2>
+                <h3>Pizza's Combo</h3>
+                </div>
+              <div class="col-lg-5">
+                <div>
+                  <img src="logo/banner-5.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container-fluid main-section bg-color">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-6">
+          <div class="category-list">
+            <img src="logo/c-1.png">
+            <h2> Double Chees Burger</h2>
+            <p>19 Restaurants Products</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-6">
+          <div class="category-list">
+            <img src="logo/c-2.png">
+            <h2>French fries</h2>
+            <p>19 Restaurants Products</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-6">
+          <div class="category-list">
+            <img src="logo/c-3.png">
+            <h2>Burger French Combo</h2>
+            <p>9 Restaurants Products</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-6">
+          <div class="category-list">
+            <img src="logo/c-4.png">
+            <h2>Sandwich</h2>
+            <p>24 Restaurants Products</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-6">
+          <div class="category-list">
+            <img src="logo/c-5.png">
+            <h2>chicken Lolipop</h2>
+            <p>44 Restaurants Products</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-6">
+          <div class="category-list">
+            <img src="logo/c-6.png">
+            <h2>Single chees tika Burger</h2>
+            <p>14 Restaurants Products</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-6">
+          <div class="category-list">
+            <img src="logo/c-7.png">
+            <h2>Pizza</h2>
+            <p>14 Restaurants Products</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-6">
+          <div class="category-list">
+            <img src="logo/c-8.png">
+            <h2>Veg Burger</h2>
+            <p>14 Restaurants Products</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container-fluid  main-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="heading-section">
+            <h3>Our Top Sell</h3>
+            <h2>Checkout Our Top Sell Burger & Pizza combo's</h2>
+            <div class="heading-borders">
+              <span class="selected"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="famous-product">
+            <h2>Non-Veg</h2>
+            <h3>Chicken Salad</h3>
+            <img src="logo/p-1.png">
+            <div class="price">
+              <h4>Rs 180.00 </h4>
+              <p>220gr/600cal</p>
+              <span class="add-to-cart" data-name="Chicken Salad" data-price="180" data-calories="600">
+                <i class="fa fa-plus"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="famous-product">
+            <h2>Non-Veg</h2>
+            <h3>Bacon Cheese Burger</h3>
+            <img src="logo/p-2.png">
+            <div class="price">
+              <h4>Rs.349.00 </h4>
+              <p>220gr/600cal</p>
+              <span class="add-to-cart" data-name="Bacon Cheese Burger" data-price="350" data-calories="600">
+                <i class="fa fa-plus"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="famous-product">
+            <h2>Non-Veg</h2>
+            <h3>Bacon Cheese Pizza</h3>
+            <img src="logo/p-3.png">
+            <div class="price">
+              <h4>Rs.299.00 </h4>
+              <p>220gr/600cal</p>
+              <span class="add-to-cart" data-name="Bacon Cheese Pizza" data-price="299" data-calories="600">
+                <i class="fa fa-plus"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="famous-product">
+            <h2>Non-Veg</h2>
+            <h3>chicken pizza</h3>
+            <img src="logo/p-4.png">
+            <div class="price">
+              <h4>Rs 499.00 </h4>
+              <p>220gr/600cal</p>
+              <span class="add-to-cart" data-name="chicken pizza" data-price="499" data-calories="600">
+                <i class="fa fa-plus"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="famous-product">
+            <h2>Veg</h2>
+            <h3>Veg pizza</h3>
+            <img src="logo/p-5.png">
+            <div class="price">
+              <h4>Rs 149.00 </h4>
+              <p>220gr/600cal</p>
+              <span class="add-to-cart" data-name="veg pizza" data-price="149" data-calories="600">
+                <i class="fa fa-plus"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="famous-product">
+            <h2>Veg</h2>
+            <h3> veg Burger Combo</h3>
+            <img src="logo/p-6.png">
+            <div class="price">
+              <h4>Rs.180.00 </h4>
+              <p>220gr/600cal</p>
+              <span class="add-to-cart" data-name="veg Burger Combo" data-price="180" data-calories="600">
+                <i class="fa fa-plus"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="famous-product">
+            <h2>Non-Veg</h2>
+            <h3>classic combo</h3>
+            <img src="logo/p-7.png">
+            <div class="price">
+              <h4>Rs.130.00 </h4>
+              <p>220gr/600cal</p>
+              <span class="add-to-cart" data-name="classic Combo" data-price="130" data-calories="600">
+                <i class="fa fa-plus"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="famous-product">
+            <h2>Non-Veg</h2>
+            <h3>Chicken Burger combo</h3>
+            <img src="logo/p-8.png">
+            <div class="price">
+              <h4>Rs.280.00</h4>
+              <p>220gr/600cal</p>
+              <span class="add-to-cart" data-name="Chicken Burger combo" data-price="280" data-calories="600">
+                <i class="fa fa-plus"></i>
+              </span>
+            </div>
+          </div>
+           </div>
+      </div>
+    </div>
+  </div>
+  <div id="cart">
+    <h2>Cart</h2>
+    <div id="cart-items"></div>
+    <h3 id="cart-total">Total: Rs. 0</h3>
+    <button id="pay-btn">Pay Now</button>
+</div>
+<div id="confirmation-modal" class="modal">
+  <div class="modal-content">
+    <h2>Are you sure you want to confirm your order?</h2>
+    <button id="yes-btn">Yes</button>
+    <button id="no-btn">No</button>
+  </div>
+</div>
+<img id="scanner-photo" src="logo/Paytm_QRcode_1732194721106.png"style="display: none;"/>
+<div class="container-fluid main-section bg-color">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="adv-left">
+            <img src="logo/scooter.png">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="adv-right">
+            <h2>Fastest Delivery</h2>
+            <h3>Your Favorite Food, <br> on the Way! </h3>
+            <p>Your order in safe hand.....!!!!</p>
+            <div class="row">
+              <div class="col-lg-4 col-md-4">
+                <div class="about-div">
+                  <i class="fa fa-home"></i>
+                  <p>Delivery in 30 minutes.</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="about-div">
+                  <i class="fa fa-hourglass"></i>
+                  <p>Delivery in 30 minutes.</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="about-div">
+                  <i class="fa fa-birthday-cake"></i>
+                  <p>Delivery in 30 minutes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container-fluid footer-section" style="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="footer-top">
+            <h2>A Moments Of Delivered <br> On Right Time & Place </h2>
+            <h3>91-9123354925</h3>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h2>
+            <img src="logo/logo.png">
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <h4></h4>
+          <div class="row">
+            <div class="col-6">
+              <div class="footer-menu">
+                <ul>
+                  <li>Home</li>
+                  <li>Menu</li>
+                  <li>About us</li>
+                  <li>restaurant</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="footer-menu">
+                <ul>
+                  <li>Quick Order</li>
+                  <li>Fast Food</li>
+                  <li>Blogging</li>
+                  <li>Contact Us</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h4>Food Delivery </h4>
+          <table>
+            <tr>
+              <td>Mon-Fri...................</td>
+              <td>8:00 am-12:00 pm</td>
+            </tr>
+            <tr>
+              <td>Saturday.................</td>
+              <td>8:00 am-12:00 pm</td>
+            </tr>
+            <tr>
+              <td>Sunday....................</td>
+              <td>Closed</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-4">
+          <h4>Contact Us</h4>
+          <div class="contact-info">
+            <p>
+              <span>
+                <i class="fa fa-map-marker"></i>
+              </span> Bihar,  Muzaffarpur, India
+            </p>
+            <p>
+              <span>
+                <i class="fa fa-phone"></i>
+              </span> +91 8603407394
+            </p>
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/piyush_mishra___1/profilecard/?igsh=MWg3bGZlanoxZGZxeA==" target="_blank">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </li>
+              
+              <li>
+                <a href="https://wa.me/9123354925" target="_blank">
+                  <i class="fa fa-whatsapp"></i>
+                </a>
+              </li>
+              
+              
+              <li>
+                <a href="https://www.youtube.com/watch?v=zAICu_dIlUs" target="_blank">
+                  <i class="fa fa-youtube"></i>
+                </a>
+              </li>
+              
+              </li>
+              <li>
+                <a href="https://www.facebook.com/piyush.king.129?mibextid=ZbWKwL" target="_blank">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container ">
+      <div class="row copyright">
+        <div class="col-md-6">
+          <p>@ All Copy Right By Mishra Company</p>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <li>
+              <a href="#">Service</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ </head>
+ <body>
+  <script src="script.js"></script>
